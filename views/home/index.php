@@ -42,29 +42,29 @@
           <!-- ============================================================== -->
           <div class="row">
             <!-- Column -->
-            <div class="col-md-6 col-lg-2 col-xlg-3">
+            <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
               <div class="card card-hover">
                 <div class="box bg-cyan text-center">
                   <h1 class="font-light text-white">
                     <i class="mdi mdi-view-dashboard"></i>
                   </h1>
-                  <h6 class="text-white">Dashboard</h6>
+                  <h6><a href="home" class="text-white">Dashboard</a></h6>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Column -->
-            <div class="col-md-6 col-lg-4 col-xlg-3">
+            <!-- <div class="col-md-6 col-lg-4 col-xlg-3">              
               <div class="card card-hover">
                 <div class="box bg-success text-center">
                   <h1 class="font-light text-white">
                     <i class="mdi mdi-chart-areaspline"></i>
                   </h1>
-                  <h6 class="text-white">Charts</h6>
-                </div>
+                  <h6><a href="estadisticas" class="text-white">Estadísticas</a></h6>
+                </div>                
               </div>
-            </div>
+            </div> -->
             <!-- Column -->
-            <div class="col-md-6 col-lg-2 col-xlg-3">
+            <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
               <div class="card card-hover">
                 <div class="box bg-warning text-center">
                   <h1 class="font-light text-white">
@@ -73,9 +73,9 @@
                   <h6 class="text-white">Widgets</h6>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Column -->
-            <div class="col-md-6 col-lg-2 col-xlg-3">
+            <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
               <div class="card card-hover">
                 <div class="box bg-danger text-center">
                   <h1 class="font-light text-white">
@@ -84,9 +84,9 @@
                   <h6 class="text-white">Tables</h6>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Column -->
-            <div class="col-md-6 col-lg-2 col-xlg-3">
+            <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
               <div class="card card-hover">
                 <div class="box bg-info text-center">
                   <h1 class="font-light text-white">
@@ -95,10 +95,10 @@
                   <h6 class="text-white">Full Width</h6>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Column -->
             <!-- Column -->
-            <div class="col-md-6 col-lg-4 col-xlg-3">
+            <!-- <div class="col-md-6 col-lg-4 col-xlg-3">
               <div class="card card-hover">
                 <div class="box bg-danger text-center">
                   <h1 class="font-light text-white">
@@ -107,9 +107,9 @@
                   <h6 class="text-white">Forms</h6>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Column -->
-            <div class="col-md-6 col-lg-2 col-xlg-3">
+            <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
               <div class="card card-hover">
                 <div class="box bg-info text-center">
                   <h1 class="font-light text-white">
@@ -118,9 +118,9 @@
                   <h6 class="text-white">Buttons</h6>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Column -->
-            <div class="col-md-6 col-lg-2 col-xlg-3">
+            <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
               <div class="card card-hover">
                 <div class="box bg-cyan text-center">
                   <h1 class="font-light text-white">
@@ -129,9 +129,9 @@
                   <h6 class="text-white">Elements</h6>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Column -->
-            <div class="col-md-6 col-lg-2 col-xlg-3">
+            <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
               <div class="card card-hover">
                 <div class="box bg-success text-center">
                   <h1 class="font-light text-white">
@@ -140,9 +140,9 @@
                   <h6 class="text-white">Calnedar</h6>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Column -->
-            <div class="col-md-6 col-lg-2 col-xlg-3">
+            <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
               <div class="card card-hover">
                 <div class="box bg-warning text-center">
                   <h1 class="font-light text-white">
@@ -151,7 +151,7 @@
                   <h6 class="text-white">Errors</h6>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Column -->
           </div>
           <!-- ============================================================== -->
@@ -163,19 +163,20 @@
                 <div class="card-body">
                   <div class="d-md-flex align-items-center">
                     <div>
-                      <h4 class="card-title">Site Analysis</h4>
-                      <h5 class="card-subtitle">Overview of Latest Month</h5>
+                      <h4 class="card-title">Número de Visitas</h4>
+                      <h5 class="card-subtitle">Visitas en los últimos 12 meses</h5>
                     </div>
                   </div>
                   <div class="row">
                     <!-- column -->
                     <div class="col-lg-9">
-                      <div class="flot-chart">
-                        <div
-                          class="flot-chart-content"
-                          id="flot-line-chart"
-                        ></div>
+                      <!-- Gráfico últimos 12 meses -->
+                      <div>
+                        <canvas id="chart12meses">
+
+                        </canvas>
                       </div>
+                      <!-- Gráfico últimos 12 meses -->
                     </div>
                     <div class="col-lg-3">
                       <div class="row">
@@ -237,6 +238,7 @@
         <!-- End Container fluid  -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
+        
     <!-- Menu -->
     <?php include_once "views/layout/footeradmin.php"; ?>
-    <!-- / Menu -->
+    <!-- / Menu -->     

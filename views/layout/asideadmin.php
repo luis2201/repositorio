@@ -82,11 +82,11 @@
                       ><i class="mdi mdi-minus"></i
                       ><span class="hide-menu"> Proyectos de Investigación </span></a
                     >
-                    <a href="<?php echo DIR; ?>listadocumentomateria" class="sidebar-link"
+                    <a href="<?php echo DIR; ?>proyectosvinculacion" class="sidebar-link"
                       ><i class="mdi mdi-minus"></i
                       ><span class="hide-menu"> Proyectos de Vinculación </span></a
                     >
-                    <a href="<?php echo DIR; ?>listadocumentoarea" class="sidebar-link"
+                    <a href="<?php echo DIR; ?>patentes" class="sidebar-link"
                       ><i class="mdi mdi-minus"></i
                       ><span class="hide-menu"> Patentes </span></a
                     >

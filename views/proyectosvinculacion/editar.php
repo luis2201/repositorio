@@ -17,11 +17,11 @@
         <div class="page-breadcrumb">
           <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Proyectos de Investigación</h4>
+              <h4 class="page-title">Proyectos de Vinculación</h4>
               <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Proyectos de Investigación</a></li>
+                    <li class="breadcrumb-item"><a href="#">Proyectos de Vinculación</a></li>
                     <li class="breadcrumb-item active" aria-current="page">
                       Registrar
                     </li>
@@ -44,10 +44,10 @@
             <div class="card">
                 <div class="card-header">
                     <h1 style="position:absolute;">Editar Proyecto</h1>
-                    <a class="btn btn-primary float-end" href="/proyectosinvestigacion" style="width:100px;">Volver</a>
+                    <a class="btn btn-primary float-end" href="/proyectosvinculacion" style="width:100px;">Volver</a>
                 </div>
                 <div class="card-body p-3">            
-                    <form action="https://repositorio.itsup.edu.ec/proyectosinvestigacion/actualizar" method="post" enctype="multipart/form-data" autocomplete="off">
+                    <form action="https://repositorio.itsup.edu.ec/proyectosvinculacion/actualizar" method="post" enctype="multipart/form-data" autocomplete="off">
                         <input type="hidden" name="ProyectoID" value="<?php echo encryptID($this->proyectos->ProyectoID); ?>">
                         <div class="row">
                             <div class="mb-3">

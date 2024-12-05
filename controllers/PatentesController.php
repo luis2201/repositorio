@@ -1,10 +1,10 @@
 <?php
-//controllers/ProyectosinvestigacionController.php
+//controllers/PatentesController.php
 
 require_once 'models/Proyectos.php';
 require_once 'models/Database.php';
 
-class ProyectosinvestigacionController {
+class PatentesController {
     private $db;
     private $proyectos;
 
@@ -15,20 +15,20 @@ class ProyectosinvestigacionController {
 
     // Listar todos los proyectos de investigacion
     public function index() {
-        $this->proyectos->TipoProyecto = 'I';
+        $this->proyectos->TipoProyecto = 'P';
         $stmt = $this->proyectos->leer();
 
-        include 'views/proyectosinvestigacion/index.php';
+        include 'views/patentes/index.php';
     }
 
     // Visualizar el proyecto
     public function ver() {        
-        include 'views/proyectosinvestigacion/ver.php';
+        include 'views/patentes/ver.php';
     }
 
     // Mostrar formulario para crear nuevo documento
     public function crear() {          
-        include 'views/proyectosinvestigacion/crear.php';
+        include 'views/patentes/crear.php';
     }
 
     // Almacenar nuevo proyectos en la base de datos
@@ -41,8 +41,7 @@ class ProyectosinvestigacionController {
 
         $this->proyectos->TipoProyecto = $_POST['TipoProyecto'];
         $this->proyectos->Nombre = $_POST['Nombre'];
-        $this->proyectos->FechaInicio = $_POST['FechaInicio'];
-        $this->proyectos->FechaFin = $_POST['FechaFin'];
+        $this->proyectos->FechaAprobacion = $_POST['FechaAprobacion'];
         $this->proyectos->AutorDocente = $_POST['AutorDocente'];
         $this->proyectos->AutorEstudiante = $_POST['AutorEstudiante'];
         $this->proyectos->ArchivoPDF = $pdf;
@@ -53,10 +52,10 @@ class ProyectosinvestigacionController {
                 throw new Exception('Ocurrió un error al subir el archivo al servidor.');
             }
 
-            if ($this->proyectos->crearInvestigacion()) {
-                $mensaje = '<div class="alert alert-success">Proyecto registrado satisfacoriamente.</div>';
+            if ($this->proyectos->crearPatente()) {
+                $mensaje = '<div class="alert alert-success">Patente registrada satisfacoriamente.</div>';
             } else {
-                $mensaje = '<div class="alert alert-danger">No se pudo registrar el proyecto.</div>';
+                $mensaje = '<div class="alert alert-danger">No se pudo registrar la patente.</div>';
                 unlink($path.$pdf);
             }                        
         } catch (Exception $e) {
@@ -67,7 +66,7 @@ class ProyectosinvestigacionController {
         session_start();
         $_SESSION['mensaje'] = $mensaje;
 
-        header('Location: /proyectosinvestigacion/crear');
+        header('Location: /patentes/crear');
     }
 
     // Mostrar formulario para editar categoría
@@ -77,8 +76,8 @@ class ProyectosinvestigacionController {
         
         $this->proyectos->ProyectoID = $id[2];
         $this->proyectos->leerUno();
- 
-        include 'views/proyectosinvestigacion/editar.php';
+
+        include 'views/patentes/editar.php';
     }
 
     // Actualizar documento en la base de datos
@@ -96,8 +95,7 @@ class ProyectosinvestigacionController {
         }        
 
         $this->proyectos->Nombre = $_POST['Nombre'];
-        $this->proyectos->FechaInicio = $_POST['FechaInicio'];
-        $this->proyectos->FechaFin = $_POST['FechaFin'];
+        $this->proyectos->FechaAprobacion = $_POST['FechaAprobacion'];
         $this->proyectos->AutorDocente = $_POST['AutorDocente'];   
         $this->proyectos->AutorEstudiante = $_POST['AutorEstudiante']; 
         $this->proyectos->ArchivoPDF = $pdf;
@@ -112,10 +110,10 @@ class ProyectosinvestigacionController {
                 }                
             } 
 
-            if ($this->proyectos->actualizar()) {                
-                $mensaje = '<div class="alert alert-success">Proyecto actualizado satisfacoriamente.</div>';
+            if ($this->proyectos->actualizarPatente()) {                
+                $mensaje = '<div class="alert alert-success">Patente actualizado satisfacoriamente.</div>';
             } else {
-                $mensaje = '<div class="alert alert-danger">No se pudo actualizar el proyecto.</div>';
+                $mensaje = '<div class="alert alert-danger">No se pudo actualizar la patente.</div>';
                 // unlink($path.$pdf);
             }
             
@@ -127,7 +125,7 @@ class ProyectosinvestigacionController {
         session_start();
         $_SESSION['mensaje'] = $mensaje;
         
-        header("Location: /proyectosinvestigacion/editar/" . $this->proyectos->ProyectoID);
+        header("Location: /patentes/editar/" . $this->proyectos->ProyectoID);
     }
 
     // Eliminar proyecto de la base de datos
@@ -148,16 +146,7 @@ class ProyectosinvestigacionController {
         session_start();
         $_SESSION['mensaje'] = $mensaje;
         
-        header("Location: /proyectosinvestigacion");
-    }
-
-    public function search()
-    {
-        $this->proyectos->Nombre = $_POST["txtBuscarInvestigacion"];
-
-        $stmt = $this->proyectos->searchInvestigacion();    
-        print_r($stmt);
-        //include 'views/searchinvestigacion/index.php';
+        header("Location: /patentes");
     }
 
 }

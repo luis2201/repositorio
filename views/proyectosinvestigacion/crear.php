@@ -47,7 +47,8 @@
                     <a class="btn btn-primary float-end" href="/proyectosinvestigacion" style="width:100px;">Volver</a>
                 </div>
                 <div class="card-body p-3">            
-                    <form action="https://repositorio2.itsup.edu.ec/proyectosinvestigacion/almacenar" method="post" enctype="multipart/form-data" autocomplete="off">
+                    <form action="https://repositorio.itsup.edu.ec/proyectosinvestigacion/almacenar" method="post" enctype="multipart/form-data" autocomplete="off">
+                        <input type="hidden" id="TipoProyecto" name="TipoProyecto" value="I">
                         <div class="row">
                             <div class="mb-3">
                                 <label class="form-label" for="Nombre">Nombre del Proyecto:</label>

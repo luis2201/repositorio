@@ -1,10 +1,10 @@
 <?php
-//controllers/ProyectosinvestigacionController.php
+//controllers/ProyectosvinculacionController.php
 
 require_once 'models/Proyectos.php';
 require_once 'models/Database.php';
 
-class ProyectosinvestigacionController {
+class ProyectosvinculacionController {
     private $db;
     private $proyectos;
 
@@ -15,20 +15,20 @@ class ProyectosinvestigacionController {
 
     // Listar todos los proyectos de investigacion
     public function index() {
-        $this->proyectos->TipoProyecto = 'I';
+        $this->proyectos->TipoProyecto = 'V';
         $stmt = $this->proyectos->leer();
 
-        include 'views/proyectosinvestigacion/index.php';
+        include 'views/proyectosvinculacion/index.php';
     }
 
     // Visualizar el proyecto
     public function ver() {        
-        include 'views/proyectosinvestigacion/ver.php';
+        include 'views/proyectosvinculacion/ver.php';
     }
 
     // Mostrar formulario para crear nuevo documento
     public function crear() {          
-        include 'views/proyectosinvestigacion/crear.php';
+        include 'views/proyectosvinculacion/crear.php';
     }
 
     // Almacenar nuevo proyectos en la base de datos
@@ -67,7 +67,7 @@ class ProyectosinvestigacionController {
         session_start();
         $_SESSION['mensaje'] = $mensaje;
 
-        header('Location: /proyectosinvestigacion/crear');
+        header('Location: /proyectosvinculacion/crear');
     }
 
     // Mostrar formulario para editar categoría
@@ -78,7 +78,7 @@ class ProyectosinvestigacionController {
         $this->proyectos->ProyectoID = $id[2];
         $this->proyectos->leerUno();
  
-        include 'views/proyectosinvestigacion/editar.php';
+        include 'views/proyectosvinculacion/editar.php';
     }
 
     // Actualizar documento en la base de datos
@@ -127,7 +127,7 @@ class ProyectosinvestigacionController {
         session_start();
         $_SESSION['mensaje'] = $mensaje;
         
-        header("Location: /proyectosinvestigacion/editar/" . $this->proyectos->ProyectoID);
+        header("Location: /proyectosvinculacion/editar/" . $this->proyectos->ProyectoID);
     }
 
     // Eliminar proyecto de la base de datos
@@ -148,16 +148,7 @@ class ProyectosinvestigacionController {
         session_start();
         $_SESSION['mensaje'] = $mensaje;
         
-        header("Location: /proyectosinvestigacion");
-    }
-
-    public function search()
-    {
-        $this->proyectos->Nombre = $_POST["txtBuscarInvestigacion"];
-
-        $stmt = $this->proyectos->searchInvestigacion();    
-        print_r($stmt);
-        //include 'views/searchinvestigacion/index.php';
+        header("Location: /proyectosvinculacion");
     }
 
 }

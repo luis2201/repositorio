@@ -10,3 +10,5 @@ let table = new DataTable('#tbLista', {
 
 table.buttons().container()
     .appendTo('#tbLista_wrapper .col-md-6:eq(0)');
+
+ 

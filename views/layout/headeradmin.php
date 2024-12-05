@@ -27,12 +27,12 @@
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="https://repositorio2.itsup.edu.ec/matrix/assets/images/favicon.png"
+      href="<?php echo DIR; ?>matrix/assets/images/favicon.png"
     />
     <!-- Custom CSS -->
-    <link href="https://repositorio2.itsup.edu.ec/matrix/assets/libs/flot/css/float-chart.css" rel="stylesheet" />
+    <link href="<?php echo DIR; ?>matrix/assets/libs/flot/css/float-chart.css" rel="stylesheet" />
     <!-- Custom CSS -->
-    <link href="https://repositorio2.itsup.edu.ec/matrix/dist/css/style.min.css" rel="stylesheet" />
+    <link href="<?php echo DIR; ?>matrix/dist/css/style.min.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -78,7 +78,7 @@
                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                 <!-- Dark Logo icon -->
                 <img
-                  src="https://repositorio2.itsup.edu.ec/matrix/assets/images/logo-icon.png"
+                  src="<?php echo DIR; ?>matrix/assets/images/logo-icon.png"
                   alt="homepage"
                   class="light-logo"
                   width="25"
@@ -88,9 +88,9 @@
               <!-- Logo text -->
               <span class="logo-text ms-2">
                 <!-- dark Logo text -->
-                  REPOSITORIOS
+                  repositorio
                 <!-- <img
-                  src="https://repositorio2.itsup.edu.ec/matrix/assets/images/logo-text.png"
+                  src="<?php echo DIR; ?>matrix/assets/images/logo-text.png"
                   alt="homepage"
                   class="light-logo"
                 /> -->
@@ -174,7 +174,7 @@
                   aria-expanded="false"
                 >
                   <img
-                    src="https://repositorio2.itsup.edu.ec/matrix/assets/images/users/1.jpg"
+                    src="<?php echo DIR; ?>matrix/assets/images/users/1.jpg"
                     alt="user"
                     class="rounded-circle"
                     width="31"

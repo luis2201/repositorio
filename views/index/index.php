@@ -4,7 +4,7 @@
 <!-- / Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero d-flex align-items-center" style="height: 28em !Important;">
+  <section id="hero" class="hero d-flex align-items-center" style="height: 100% !Important;">
     <div class="container">
       <div class="row gy-4 d-flex justify-content-between">
         <div class="col-lg-7 order-2 order-lg-1 d-flex flex-column justify-content-center">          
@@ -15,7 +15,22 @@
           </p>
           
           <form id="form" action="https://repositorio.itsup.edu.ec/documento/search" class="form-search d-flex align-items-stretch mb-3" method="post" enctype="multipart/form-data" autocomplete="off" data-aos="fade-up" data-aos-delay="200">
-            <input type="text" id="txtBuscar" name="txtBuscar" class="form-control" placeholder="Palabra o texto para realizar una búsqueda">
+            <input type="text" id="txtBuscar" name="txtBuscar" class="form-control" placeholder="Palabra o texto para realizar una búsqueda de documento">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+          </form>
+
+          <form id="form" action="https://repositorio.itsup.edu.ec/proyectosinvestigacion/search" class="form-search d-flex align-items-stretch mb-3" method="post" enctype="multipart/form-data" autocomplete="off" data-aos="fade-up" data-aos-delay="200">
+            <input type="text" id="txtBuscarIvestigacion" name="txtBuscarIvestigacion" class="form-control" placeholder="Palabra o texto para realizar una búsqueda de proyectos de Investigación">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+          </form>
+
+          <form id="form" action="https://repositorio.itsup.edu.ec/proyectosvinculacion/search" class="form-search d-flex align-items-stretch mb-3" method="post" enctype="multipart/form-data" autocomplete="off" data-aos="fade-up" data-aos-delay="200">
+            <input type="text" id="txtBuscarVinculacion" name="txtBuscarVinculacion" class="form-control" placeholder="Palabra o texto para realizar una búsqueda de proyectos de Vinculación">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+          </form>
+
+          <form id="form" action="https://repositorio.itsup.edu.ec/patentes/search" class="form-search d-flex align-items-stretch mb-3" method="post" enctype="multipart/form-data" autocomplete="off" data-aos="fade-up" data-aos-delay="200">
+            <input type="text" id="txtBuscarPatentes" name="txtBuscarPatentes" class="form-control" placeholder="Palabra o texto para realizar una búsqueda de patentes">
             <button type="submit" class="btn btn-primary">Buscar</button>
           </form>
 
@@ -25,14 +40,14 @@
           <?php endif; ?>
 
           <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">
-            <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
-            <div class="col-lg-3 col-6">
+            <?php //while ($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+            <!-- <div class="col-lg-3 col-6">
               <div class="stats-item text-center w-100 h-100">
                 <span data-purecounter-start="0" data-purecounter-end="<?php echo $row['CantidadDocumentos']; ?>" data-purecounter-duration="1" class="purecounter"></span>
                 <p><?php echo $row['NombreCategoria']; ?></p>
               </div>
-            </div><!-- End Stats Item -->
-            <?php endwhile; ?>            
+            </div> -->
+            <?php //endwhile; ?>            
 
           </div>
         </div>
@@ -44,33 +59,9 @@
     </div>
   </section><!-- End Hero Section -->
     
-  <main id="main">
+  <main id="main" class="mt-6">
     <div class="col-6" style="margin:auto;height:50px;">
-      <div class="row p-2">
-        <!-- <div class="col-3">
-          <a href="#" class="btn text-light" style="background-color:green; width:80%; height:100px">
-            <i class="fa fa-list mt-3" aria-hidden="true" style="font-size: 3em;"></i>
-            <p class="mt-1">Categorías</p>
-          </a>
-        </div>
-        <div class="col-3"> 
-          <a href="#" class="btn btn-success" style="width:80%; height:100px">
-            <i class="fa fa-user mt-3" aria-hidden="true" style="font-size: 3em;"></i>
-            <p class="mt-1">Autores</p>
-          </a>
-        </div>
-        <div class="col-3">
-          <a href="#" class="btn text-light" style="background-color:#FF5733; width:80%; height:100px">
-            <i class="fa fa-book mt-3" aria-hidden="true" style="font-size: 3em;"></i>
-            <p class="mt-1">Temas</p>
-          </a>
-        </div>
-        <div class="col-3">
-          <a href="#" class="btn text-light" style="width:80%; height:100px; background-color:#727CAD;">
-            <i class="fa fa-calendar mt-3" aria-hidden="true" style="font-size: 3em;"></i>  
-            <p class="mt-1">Fecha</p>
-          </a>
-        </div> -->
+      
       </div>
     </div>
     

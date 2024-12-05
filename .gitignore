@@ -1,5 +1,9 @@
+.htaccess
+index.php
+
 ./vscode/
 
+assets/
 config/
-
 models/Database.php
+matrix/

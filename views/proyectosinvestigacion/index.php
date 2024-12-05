@@ -16,11 +16,11 @@
         <div class="page-breadcrumb">
           <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Documentos</h4>
+              <h4 class="page-title">Proyectos</h4>
               <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Documentos</a></li>
+                    <li class="breadcrumb-item"><a href="#">Proyectos de Investigación</a></li>
                     <li class="breadcrumb-item active" aria-current="page">
                       Registrar
                     </li>
@@ -77,7 +77,6 @@
                                 <td class="text-center" style="width:15%"><?php echo $row['FechaFin']; ?></td>
                                 <td class="text-center" style="width:20%">
                                     <a class="text-primary" href="proyectosinvestigacion/ver/<?php echo $row['ArchivoPDF']; ?>" target="_blank">Ver</a>
-                                    <a class="text-success" href="proyectosinvestigacion/autor/<?php echo $row['ProyectoID']; ?>">Autor</a>
                                     <a class="text-warning" href="proyectosinvestigacion/editar/<?php echo $row['ProyectoID']; ?>">Editar</a>
                                     <a class="text-danger" href="proyectosinvestigacion/eliminar/<?php echo $row['ArchivoPDF']; ?>">Eliminar</a>
                                 </td>
