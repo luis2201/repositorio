@@ -42,33 +42,41 @@ const ctx = document.getElementById('chart12meses');
 if(chart12meses)
 {
     $.ajax({
-        url: 'estadisticas/all12', // Cambia esto por la URL de tu archivo PHP
+        url: 'home/all12', // Cambia esto por la URL de tu archivo PHP
         type: 'GET',
         success: function(response) {
-            // Parsear la respuesta JSON
             const data = JSON.parse(response);
-            console.log(data)
-            // // Crear el gráfico
-            // new Chart(document.getElementById('visitasChart'), {
-            //     type: 'line',
-            //     data: {
-            //         labels: data.labels, // Los meses recibidos
-            //         datasets: [{
-            //             label: 'Número de Visitas',
-            //             data: data.data, // Los datos de visitas
-            //             borderWidth: 1,
-            //             borderColor: 'rgba(75, 192, 192, 1)', // Color de la línea
-            //             backgroundColor: 'rgba(75, 192, 192, 0.2)', // Color de fondo
-            //         }]
-            //     },
-            //     options: {
-            //         scales: {
-            //             y: {
-            //                 beginAtZero: true
-            //             }
-            //         }
-            //     }
-            // });
+
+            // Crear el gráfico
+            new Chart(document.getElementById('chart12meses'), {
+                type: 'line',
+                data: {
+                    labels: data.labels, // Los meses recibidos
+                    datasets: [
+                        {
+                            label: 'Tesis',
+                            data: data.data1, // Los datos de visitas
+                            borderWidth: 1,
+                            borderColor: 'rgba(75, 192, 192, 1)', // Color de la línea
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)', // Color de fondo
+                        },
+                        {
+                            label: 'Libros',
+                            data: data.data2, // Los datos de visitas
+                            borderWidth: 1,
+                            borderColor: 'rgba(199, 0, 57, 1)', // Color de la línea
+                            backgroundColor: 'rgba(199, 0, 57, 0.2)', // Color de fondo
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
         },
         error: function(error) {
             console.log('Error al obtener los datos:', error);
