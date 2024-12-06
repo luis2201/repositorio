@@ -13,7 +13,7 @@ class EstadisticasController {
     }
 
     public function index() {
-        $stmt = $this->estadisticas->totalvisitacategorias();
+        //$stmt = $this->estadisticas->totalvisitacategorias();
 
         include 'views/estadisticas/index.php'; // Asegúrate de que la ruta sea la correcta
     }
