@@ -1,4 +1,5 @@
 <?php 
+// controllers/EstadisticasController.php
 
 require_once 'models/Estadisticas.php';
 require_once 'models/Database.php';
@@ -12,10 +13,16 @@ class EstadisticasController {
         $this->estadisticas = new Estadisticas($this->db);        
     }
 
-    public function index() {
-        //$stmt = $this->estadisticas->totalvisitacategorias();
+    public function visitatesis() {
+        $stmt = $this->estadisticas->visitatesis();
 
-        include 'views/estadisticas/index.php'; // Asegúrate de que la ruta sea la correcta
+        include 'views/estadisticas/visitatesis.php'; // Asegúrate de que la ruta sea la correcta
+    }
+
+    public function visitalibros() {
+        $stmt = $this->estadisticas->visitalibros();
+
+        include 'views/estadisticas/visitalibros.php'; // Asegúrate de que la ruta sea la correcta
     }
 
 

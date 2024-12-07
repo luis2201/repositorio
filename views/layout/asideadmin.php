@@ -132,9 +132,15 @@
                 >
                 <ul aria-expanded="false" class="collapse first-level">
                   <li class="sidebar-item">
-                    <a href="<?php echo DIR; ?>estadisticas" class="sidebar-link"
+                    <a href="<?php echo DIR; ?>estadisticas/visitalibros" class="sidebar-link"
                       ><i class="mdi mdi-minus"></i
                       ><span class="hide-menu"> Visitas por libro </span></a
+                    >                    
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="<?php echo DIR; ?>estadisticas/visitatesis" class="sidebar-link"
+                      ><i class="mdi mdi-minus"></i
+                      ><span class="hide-menu"> Visitas por Tesis </span></a
                     >                    
                   </li>
                 </ul>

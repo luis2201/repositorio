@@ -101,6 +101,38 @@ class Estadisticas {
         return $stmt;
     }
 
+    // Obtener visitas tesis
+    public function visitatesis() {       
+      $query = "SELECT D.Titulo, M.Nombre AS Materia, A.Nombre AS Area, COUNT(*)AS Visitas
+                FROM Visita_Documentos V
+                  INNER JOIN Documentos D ON V.DocumentoID = D.DocumentoID
+                  INNER JOIN Materias M ON D.MateriaID = M.MateriaID
+                  INNER JOIN Areas A ON M.AreaID = A.AreaID
+                WHERE D.CategoriaID = 2
+                GROUP BY D.DocumentoID";
+
+      $stmt = $this->conn->prepare($query);
+      $stmt->execute();
+
+      return $stmt;
+    }
+
+    // Obtener visitas libros
+    public function visitalibros() {       
+      $query = "SELECT D.Titulo, M.Nombre AS Materia, A.Nombre AS Area, COUNT(*)AS Visitas
+                FROM Visita_Documentos V
+                  INNER JOIN Documentos D ON V.DocumentoID = D.DocumentoID
+                  INNER JOIN Materias M ON D.MateriaID = M.MateriaID
+                  INNER JOIN Areas A ON M.AreaID = A.AreaID
+                WHERE D.CategoriaID = 3
+                GROUP BY D.DocumentoID";
+
+      $stmt = $this->conn->prepare($query);
+      $stmt->execute();
+
+      return $stmt;
+    }
+
 }
 
 ?>
